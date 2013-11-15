@@ -18,8 +18,10 @@ script.
       },
       loadStudentData : function(){
       $.ajax({
+        method:'GET',
         url:"http://www.behance.net/v2/projects?q=motorcycle&api_key=JX5qeSfassE0zdtJqv6FjTTq942R2QlI",
-        method:'get',
+        processData: true,
+        dataType: "jsonp",
         success:this.handlerData
       })
     }
