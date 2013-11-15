@@ -6,6 +6,10 @@ script#templating(type="text/x-handlebars-template")
       {{#each projects}}
       tr
         td {{ id }}
+        td
+          a(href="{{ url }}") {{ name }}
+        td 
+          img.img-responsive(src="{{ covers.[202] }}")
       {{/each}}
 
 script.
@@ -19,7 +23,7 @@ script.
       loadStudentData : function(){
       $.ajax({
         method:'GET',
-        url:"http://www.behance.net/v2/projects?q=motorcycle&api_key=JX5qeSfassE0zdtJqv6FjTTq942R2QlI",
+        url:"http://www.behance.net/v2/collections/13234257/projects?api_key=JX5qeSfassE0zdtJqv6FjTTq942R2QlI",
         processData: true,
         dataType: "jsonp",
         success:this.handlerData
