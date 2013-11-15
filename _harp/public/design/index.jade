@@ -10,15 +10,15 @@ script#templating(type="text/x-handlebars-template")
 
 script.
   var STUDENT_METHOD ={
-    handlerData:function(resJSON){
+    handlerData:function(resJSONP){
       var templateSource   = $("#templating").html(),
         template = Handlebars.compile(templateSource),
-        studentHTML = template(resJSON);
+        studentHTML = template(resJSONP);
         $('#deasyportfolio').html(studentHTML);
       },
       loadStudentData : function(){
       $.ajax({
-        url:"http://www.behance.net/v2/projects?q=motorcycle&api_key=JX5qeSfassE0zdtJqv6FjTTq942R2QlI",
+        url:"students.json",
         method:'get',
         success:this.handlerData
       })
