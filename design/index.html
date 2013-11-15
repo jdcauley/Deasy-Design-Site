@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>My Harp Blog</title><link rel="stylesheet" href="/assets/css/app.css"><link rel="alternate" type="application/rss+xml" title="My Harp Blog RSS" href="/rss.xml"><script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><script src="/assets/js/be.js" type="text/javascript"></script><script src="/assets/js/handlebars.js" type="text/javascript"></script></head><body class="page-design design-index"><article id="content"><div class="container main-content"><div class="row"><div class="col-sm-8 main"><div id="deasyportfolio" class="table-responsive"></div><script id="templating" type="text/x-handlebars-template"><table class="table table-striped"><thead></thead><tbody>{{#each projects}}<tr><td>{{ id }}</td></tr>{{/each}}</tbody></table></script><script>var STUDENT_METHOD ={
+  handlerData:function(resJSON){
+    var templateSource   = $("#templating").html(),
+      template = Handlebars.compile(templateSource),
+      studentHTML = template(resJSON);
+      $('#deasyportfolio').html(studentHTML);
+    },
+    loadStudentData : function(){
+    $.ajax({
+      url:"http://www.behance.net/v2/projects?q=motorcycle&api_key=JX5qeSfassE0zdtJqv6FjTTq942R2QlI",
+      method:'get',
+      success:this.handlerData
+    })
+  }
+};
+$(document).ready(function(){
+  STUDENT_METHOD.loadStudentData();
+  });</script></div><div class="col-sm-offset-1 col-sm-3 aside"><p><a href="/"><img src="http://placekitten.com/g/200/200" class="aside-profile-img aside-img"/></a></p><p><strong>Web Engineer &amp; Designer</strong></p><p>I live in Vancouver, Canada, where I build websites for startups and small </p><p>Twitter: <a href="http://twitter.com/HarpPlatform">@HarpPlatform</a></p></div></div></div></article><hr><footer><div class="container"><div class="row"><div class="col-sm-6"><p><small>&copy; 2013 My Harp Blog</small></p></div><div class="col-sm-6"><p class="pull-right"><small><a href="/rss.xml" title="My Harp Blog RSS feed"><img src="/assets/images/feed-icon.png" class="rss-feed"/> RSS feed</a></small></p></div></div></div></footer></body></html>
