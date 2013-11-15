@@ -6,6 +6,9 @@ html(lang="en")
     title #{ site_title }
     link(rel="stylesheet", href="/assets/css/app.css")
     link(rel="alternate", type="application/rss+xml", title="#{ site_title } RSS", href="/rss.xml")
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+    script(src="/assets/js/be.js", type="text/javascript")
+    script(src="/assets/js/handlebars.js", type="text/javascript")
   body(class="page-#{ current.path[0] } #{ current.path.join('-') }")
     article#content
       .container.main-content
@@ -17,3 +20,4 @@ html(lang="en")
             != partial("_partials/aside")
     hr
     != partial("_partials/footer")
+    script

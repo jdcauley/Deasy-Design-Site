@@ -1,0 +1,29 @@
+#deasyportfolio.table-responsive
+script#templating(type="text/x-handlebars-template")
+  table.table.table-striped
+    thead
+    tbody
+      {{#each projects}}
+      tr
+        td {{ id }}
+      {{/each}}
+
+script
+  var STUDENT_METHOD ={
+    handlerData:function(resJSON){
+      var templateSource   = $("#templating").html(),
+        template = Handlebars.compile(templateSource),
+        studentHTML = template(resJSON);
+        $('#deasyportfolio').html(studentHTML);
+      },
+      loadStudentData : function(){
+      $.ajax({
+        url:"http://www.behance.net/v2/projects?q=motorcycle&api_key=JX5qeSfassE0zdtJqv6FjTTq942R2QlI",
+        method:'get',
+        success:this.handlerData
+      })
+    }
+  };
+  $(document).ready(function(){
+    STUDENT_METHOD.loadStudentData();
+    });
