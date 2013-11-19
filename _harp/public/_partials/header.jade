@@ -1,0 +1,13 @@
+if current.path[0] == "design"
+  header.design-header
+    .container
+      h1.center 
+        a.header-swap(href="/") Deasy
+        a.header-current(href="/design") Design
+
+else
+  header.deasy-header
+    .container
+      h1.center
+        a.header-current(href="/") Deasy
+        a.header-swap(href="/design") Design

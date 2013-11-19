@@ -1,12 +1,23 @@
 {
   "domains": [""],
   "globals": {
-    "site_title": "My Harp Blog",
-    "twitter": "HarpPlatform",
-    "site_url": "http://example.com",
+    "site_title": "Deasy Design",
+    "twitter": "deasydesign",
+    "site_url": "/",
     "disqus": {
       "enabled": false,
       "shortname": ""
+    },
+    "features": {
+      "first": {
+        "image" : "passport.jpg"
+      },
+      "second": {
+        "image" : "independence.jpg"
+      },
+      "third": {
+        "image" : "overfield.jpg"
+      }
     }
   }
 }

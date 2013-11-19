@@ -7,16 +7,17 @@ html(lang="en")
     link(rel="stylesheet", href="/assets/css/app.css")
     link(rel="alternate", type="application/rss+xml", title="#{ site_title } RSS", href="/rss.xml")
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-    script(src="/assets/js/be.js", type="text/javascript")
     script(src="/assets/js/handlebars.js", type="text/javascript")
+    script(src="/assets/js/portfolio.js", type="text/javascript")
+    script(src="/assets/js/jquery.be.js", type="text/javascript")
   body(class="page-#{ current.path[0] } #{ current.path.join('-') }")
+    != partial("_partials/header")
     article#content
       .container.main-content
         .row
-          .col-sm-8.main
+          .col-lg-12.main
             != yield
             != partial("_partials/comments")
-          .col-sm-offset-1.col-sm-3.aside
-            != partial("_partials/aside")
     hr
     != partial("_partials/footer")
+    script(src="/assets/js/bootstrap.min.js", type="text/javascript")

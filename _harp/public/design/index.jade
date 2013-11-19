@@ -1,35 +1,23 @@
-#deasyportfolio.table-responsive
-script#templating(type="text/x-handlebars-template")
-  table.table.table-striped
-    thead
-    tbody
-      {{#each projects}}
-      tr
-        td {{ id }}
-        td
-          a(href="{{ url }}") {{ name }}
-        td 
-          img.img-responsive(src="{{ covers.[202] }}")
-      {{/each}}
 
-script.
-  var STUDENT_METHOD ={
-    handlerData:function(resJSONP){
-      var templateSource   = $("#templating").html(),
-        template = Handlebars.compile(templateSource),
-        studentHTML = template(resJSONP);
-        $('#deasyportfolio').html(studentHTML);
-      },
-      loadStudentData : function(){
-      $.ajax({
-        method:'GET',
-        url:"http://www.behance.net/v2/collections/13234257/projects?api_key=JX5qeSfassE0zdtJqv6FjTTq942R2QlI",
-        processData: true,
-        dataType: "jsonp",
-        success:this.handlerData
-      })
-    }
-  };
-  $(document).ready(function(){
-    STUDENT_METHOD.loadStudentData();
-    });
+.container
+  .row
+    .col-lg-12
+      
+    .col-lg-12
+      #feature-carousel.carousel.slide(data-ride="carousel")
+        ol.carousel-indicators
+          li.active(data-target="#feature-carousel", data-slide-to="0")
+          li(data-target="#feature-carousel", data-slide-to="1")
+          li(data-target="#feature-carousel", data-slide-to="2")
+
+        .carousel-inner
+          .item.active
+            img.center(src="/assets/images/#{ features.first.image }")
+          .item
+            img.center(src="/assets/images/#{ features.second.image }")
+          .item
+            img.center(src="/assets/images/#{ features.third.image }")
+      
+      each post, slug in public.design._data
+        != partial("/" + slug, post)
+
