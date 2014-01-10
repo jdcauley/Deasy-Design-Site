@@ -1,13 +1,39 @@
 if current.path[0] == "design"
-  header.design-header
+  header.design-header.headroom
     .container
       h1.center 
-        a.header-swap(href="/") Deasy
-        a.header-current(href="/design") Design
+        a.header-deasy(href="/") Deasy
+        a.header-design(href="/design") Design
 
 else
-  header.deasy-header
+  header.deasy-header.headroom
     .container
-      h1.center
-        a.header-current(href="/") Deasy
-        a.header-swap(href="/design") Design
+       h1.the-d D
+    nav.navbar.navbar-default.navbar-fixed-top.fixed-space(role="navigation")
+      .container
+        .row
+          .col-sm-8.col-sm-offset-2
+            h1.dd-head.center 
+              a.header-deasy(href="/") Deasy
+              a.header-design(href="/design") Design
+              
+        .navbar-header
+          button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+            span.sr-only Toggle Navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        .nav-border    
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+              ul.nav.navbar-nav
+                li
+                  a(href="#introduction") An Awkward Introduction
+                li
+                  a(href="#hello") Hello From David
+                li
+                  a(href="#aboutdavid") About David
+                li
+                  a(href="#testimonials") Testimonials
+                li
+                  a(href="#contact") Get In Touch
+      
