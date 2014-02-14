@@ -7,7 +7,7 @@ html(lang="en")
     link(rel="stylesheet", href="/assets/css/app.css")
     link(rel="alternate", type="application/rss+xml", title="#{ site_title } RSS", href="/rss.xml")
   body(class="page-#{ current.path[0] } #{ current.path.join('-') }")
-    // != partial("_partials/header")
+    != partial("_partials/header")
 
     article#content
       .container.main-content
