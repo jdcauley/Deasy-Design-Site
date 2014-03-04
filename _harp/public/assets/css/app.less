@@ -2,6 +2,8 @@
 
 /* Variables */
 
+@black: #000;
+
 /* Mixins */
 .center{
   text-align: center;
@@ -33,27 +35,46 @@ a {
 .fixed-space{
   top: 55px;
 }
+.container{
+  border-left: 1px solid @black;
+  border-right: 1px solid @black;
+}
+.navbar-default{
+  border: none;
+}
+.nav-border{
+  margin-left: -15px;
+  margin-right: -15px;
+  border-top: 1px solid @black;
+  border-bottom: 1px solid @black;
+}
+.nav-width{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .navbar-nav{
+  font-size: 12px;
   li{
     a{
       padding-top: 0;
       padding-bottom: 0;
       text-transform: uppercase;
     }
-    border-right: 1px solid #000;
-    &:last-child{
-      border: none;
-    }
   }
 }
-.nav-border{
-  padding-top: 2px;
-  padding-bottom: 2px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+.nav{
+
 }
+.navbar-nav.nav-justified {
+  display:table;
+}
+
+.navbar-nav.nav-justified > li{
+  float:none;
+  width:auto;
+}
+
 .design-header{
 
 }
@@ -118,6 +139,15 @@ a {
     border-right: 1px solid #000;
   }
 }
+.aline{
+  .hidden-xs;
+  .hidden-sm;
+  height: 400px;
+  width: 300px;
+  display: block;
+  margin-top: -25px;
+  border-right: 1px solid @black;
+}
 /* Post */
 .post {
   margin-bottom: 50px;
@@ -135,10 +165,14 @@ a {
   width: 100%;
   .clearfix();
 }
+
 .parallaxscroll{
-  height: 3000px;
+  height: 1494px;
   width: 820px;
-  margin: 60px auto;
+  padding: 10px 0 15px;
+  border-top: 1px solid @black;
+  border-bottom: 1px solid @black;
+  margin: 0 auto 60px;
   position: relative;
   overflow: hidden;
   .hidden-xs;
@@ -150,7 +184,6 @@ a {
   display: block;
   height: 3000px;
   width: 820px;
-  margin: 60px auto;
   z-index: 1;
 }
 .parallaxscroll-3{
@@ -159,7 +192,6 @@ a {
   display: block;
   height: 3000px;
   width: 820px;
-  margin: 60px auto;
   z-index: 2;
 }
 .parallaxscroll-2{
@@ -168,7 +200,6 @@ a {
   display: block;
   height: 3000px;
   width: 820px;
-  margin: 60px auto;
   z-index: 3;
 }
 .parallaxscroll-1{
@@ -177,7 +208,6 @@ a {
   display: block;
   height: 3000px;
   width: 820px;
-  margin: 60px auto;
   z-index: 4;
 }
 
