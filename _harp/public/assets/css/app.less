@@ -18,6 +18,7 @@
   padding-bottom: 20px;
 }
 
+
 /* HTML Elements */
 .gist {
   pre {
@@ -30,7 +31,9 @@ a {
     text-decoration: none;
   }
 }
-
+p{
+  font-size: 16px;
+}
 /* Header */
 .fixed-space{
   top: 55px;
@@ -39,8 +42,17 @@ a {
   border-left: 1px solid @black;
   border-right: 1px solid @black;
 }
-.navbar-default{
+.navbar{
+  font-family: @font-family-sans-serif;
+}
+.navbar-deasy{
+  .navbar-default;
   border: none;
+}
+.navbar-deasy .navbar-nav>.active>a, .navbar-deasy .navbar-nav>.active>a:hover, .navbar-deasy .navbar-nav>.active>a:focus{
+  background: none;
+  font-weight: 900;
+  color: #000;
 }
 .nav-border{
   margin-left: -15px;
@@ -54,7 +66,9 @@ a {
   margin-right: auto;
 }
 .navbar-nav{
-  font-size: 12px;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   li{
     a{
       padding-top: 0;
@@ -74,7 +88,11 @@ a {
   float:none;
   width:auto;
 }
-
+.header-design, .header-deasy{
+  font-family: @font-family-sans-serif;
+  font-weight: 900;
+  font-size: 80px;
+}
 .design-header{
 
 }
@@ -123,9 +141,6 @@ a {
     font-weight: 900;
     text-transform: uppercase;
   }
-  p{
-    font-size: 20px;
-  }
   .pull-quote{
     font-family: @font-family-serif;
   }
@@ -134,10 +149,10 @@ a {
   h3{
     font-weight: 600;
   }
-  .how{
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-  }
+}
+.how{
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
 }
 .aline{
   .hidden-xs;
@@ -211,6 +226,119 @@ a {
   z-index: 4;
 }
 
+.daddy{
+  margin-top: 30px;
+}
+
+.timeline{
+
+}
+.ltl-david{
+  margin-top: 60px;
+}
+.arrow-ltl-david{
+  width: 0;
+  height: 0;
+  margin-top: -100px;
+  margin-right: -15px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right:10px solid #000;
+  float: right;
+  .hidden-xs;
+}
+.arrow-designer-dave{
+  width: 0;
+  height: 0;
+  margin-top: -90px;
+  margin-left: -15px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #000;
+  .hidden-xs;
+}
+.arrow-cheerios {
+	width: 0;
+	height: 0;
+  margin-top: -140px;
+  margin-right: -15px;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right:10px solid #000;
+  float: right;
+  .hidden-xs;
+}
+.arrow-mademoiselle{
+	width: 0;
+	height: 0;
+  margin-top: -140px;
+  margin-left: -15px;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #000;
+  .hidden-xs;
+}
+.emma{
+  margin-top: -100px;
+}
+.arrow-emma{
+  width: 0;
+  height: 0;
+  margin-top: -200px;
+  margin-left: -15px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #000;
+  .hidden-xs;
+}
+.paul{
+  margin-top: 70px;
+}
+.arrow-paul {
+  width: 0;
+  height: 0;
+  margin-top: -200px;
+  margin-right: -15px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right:10px solid #000;
+  float: right;
+  .hidden-xs;
+}
+.timeline-copy{
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  h5{
+    font-size: 20px;
+    font-weight: 900;
+  }
+}
+.timeline-entry{
+  margin-bottom: 40px;
+  p{
+    line-height: 1.8;
+    font-size: 18px;
+  }
+}
+.cheerios{
+  margin-top: -80px;
+}
+
+.circle{
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.testimonials{
+  p{
+    font-size: 20px;
+  }
+}
+.sub-testimonials{
+  p{
+    font-size: 16px;
+  }
+}
 /* Sidebar/Aside */
 
 .aside-img {
@@ -234,7 +362,12 @@ body > footer {
   margin-bottom: 50px;
 }
 
+/* Utilities */
 
+.deasy-img{
+  .img-responsive;
+  .center;
+}
 
 /*  Media Queries
     Extra small devices (phones, up to 480px) No media query since this is the default in Bootstrap */
@@ -247,3 +380,9 @@ body > footer {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg) {}
+
+@media (min-width: 1200px){
+  .container {
+    max-width: 1140px;
+  }
+}
