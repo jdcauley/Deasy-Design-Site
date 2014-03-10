@@ -33,6 +33,7 @@ a {
 }
 p{
   font-size: 16px;
+  line-height: 1.5;
 }
 /* Header */
 .fixed-space{
@@ -61,7 +62,7 @@ p{
   border-bottom: 1px solid @black;
 }
 .nav-width{
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -123,6 +124,18 @@ p{
 }
 /* Main */
 
+.pixel-dave{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  height: 388px;
+  width: 569px;
+  background: url(../images/DD_pixal.jpg) no-repeat;
+  &:hover{
+    background: url(../images/DD_nopixal.jpg) no-repeat;
+  }
+}
+
 .main {
   > h2 {
     margin-top: 50px;
@@ -180,7 +193,6 @@ p{
   width: 100%;
   .clearfix();
 }
-
 .parallaxscroll{
   height: 1494px;
   width: 820px;
@@ -306,6 +318,8 @@ p{
   .hidden-xs;
 }
 .timeline-copy{
+  color: #fff;
+  background: #000;
   border-left: 1px solid #000;
   border-right: 1px solid #000;
   h5{
@@ -330,14 +344,26 @@ p{
   border-radius: 50%;
 }
 .testimonials{
+  margin-top: 60px;
   p{
     font-size: 20px;
   }
 }
 .sub-testimonials{
+  margin-top: 50px;
   p{
     font-size: 16px;
   }
+}
+.title{
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+.border-left{
+  border-left: 1px solid #000;
+}
+.padded-left{
+  padding-left: 20px;
 }
 /* Sidebar/Aside */
 
