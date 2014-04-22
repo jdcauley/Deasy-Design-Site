@@ -1,3 +1,4 @@
+/*
 $(function() {
     //caches a jQuery object containing the header element
     var header = $(".fixed-space");
@@ -5,14 +6,14 @@ $(function() {
         var scroll = $(window).scrollTop();
 
         if (scroll >= 140) {
-            header.removeClass('fixed-space');
+            $(".fixed-space").animate({ y: -80 });
+            $(".dd-head").animate({ x: -300, scale: .7 });
         } else {
             header.addClass('fixed-space');
         }
     });
 });
-
-
+*/
 /*!
  * headroom.js v0.3.11 - Give your page some headroom. Hide your header until you need it
  * Copyright (c) 2013 Nick Williams - http://wicky.nillia.ms/headroom.js

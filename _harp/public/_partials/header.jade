@@ -9,14 +9,21 @@ else
   header.deasy-header.headroom
     .container.header-container
        img(src="/assets/images/DD_logo.png")
-    nav.navbar.navbar-deasy.navbar-fixed-top.fixed-space(role="navigation")
+    nav.navbar.navbar-deasy.navbar-fixed-top(role="navigation", data-0="margin-top: 80px;", data-130="margin-top: 0;")
       .container
-        .row
-          .col-sm-8.col-sm-offset-2
-            h1.dd-head.center
-              a.header-deasy(href="/") Deasy
-              a.header-design(href="/design") Design
-
+        h1.dd-head
+          a.header-deasy(href="/", data-0="font-size: 80px; text-align:center; margin-left: 29%;", data-130="font-size:50px; text-align:left;margin-left: 1%;") Deasy
+          a.header-design(href="/design", data-0="font-size: 80px; text-align:center;", data-130="font-size:50px; text-align:left;") Design
+        .social-icons
+          .icon-row
+            a.icon-first.linkedin(href="#")
+            a.icon-second.behance(href="#")
+          .icon-row
+            a.icon-first.twitter(href="#")
+            a.icon-second.pinterest(href="#")
+          .icon-row
+            a.icon-first.facebook(href="#")
+            a.icon-second.mail
         .navbar-header
           button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
             span.sr-only Toggle Navigation
