@@ -8,22 +8,32 @@ if current.path[0] == "design"
 else
   header.deasy-header.headroom
     .container.header-container
-       img(src="/assets/images/DD_logo.png")
-    nav.navbar.navbar-deasy.navbar-fixed-top(role="navigation", data-0="margin-top: 80px;", data-130="margin-top: 0;")
+       img.dlogo(src="/assets/images/DD_logo.png")
+    nav.navbar.navbar-deasy.navbar-fixed-top(role="navigation", data-0="margin-top: 80px;", data-200="margin-top: 0;")
       .container
-        h1.dd-head
+        .dd-head
           a.header-deasy(href="/", data-0="font-size: 80px; text-align:center; margin-left: 29%;", data-130="font-size:50px; text-align:left;margin-left: 1%;") Deasy
           a.header-design(href="/design", data-0="font-size: 80px; text-align:center;", data-130="font-size:50px; text-align:left;") Design
-        .social-icons
+          span.details(data-0="opacity: 0", data-130="opacity: 1") <a title="phone" href="tel:336-847-1441">336-847-1441</a> | david@deasydesign.com
+        .social-icons(data-0="opacity: 1", data-130="opacity: 0")
           .icon-row
             a.icon-first.linkedin(href="#")
             a.icon-second.behance(href="#")
           .icon-row
-            a.icon-first.twitter(href="#")
+            a.icon-second.mail
             a.icon-second.pinterest(href="#")
           .icon-row
             a.icon-first.facebook(href="#")
+            a.icon-first.twitter(href="#")
+        .social-icons(data-0="opacity: 0", data-130="opacity: 1")
+          .icon-row
+            a.icon-first.twitter(href="#")
+            a.icon-first.linkedin(href="#")
+            a.icon-second.behance(href="#")
+          .icon-row
+            a.icon-first.facebook(href="#")
             a.icon-second.mail
+            a.icon-second.pinterest(href="#")
         .navbar-header
           button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
             span.sr-only Toggle Navigation
