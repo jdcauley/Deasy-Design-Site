@@ -30,15 +30,22 @@ html(lang="en")
     script(src="/assets/js/app.js", type="text/javascript").
 
   body(class="page-#{ current.path[0] } #{ current.path.join('-') }", data-spy="scroll" data-target=".navbar-deasy")
-    != partial("_partials/header")
+    .black-bar
+    a.design-flag(href="")
+      span D
+      span E
+      span S
+      span I
+      span G
+      span N
 
+    != partial("_partials/header")
     article#content
       .container.main-content
         .row
           .col-lg-12.main
             != yield
             != partial("_partials/comments")
-    hr
     != partial("_partials/footer")
     script(type="text/javascript").
       var s = skrollr.init({smoothScrolling: true});

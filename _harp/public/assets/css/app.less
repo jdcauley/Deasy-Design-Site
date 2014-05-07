@@ -1,7 +1,7 @@
 @import '_bootstrap';
 
 /* Variables */
-
+@white: #fff;
 @black: #000;
 
 /* Mixins */
@@ -17,7 +17,6 @@
   padding-top: 40px;
   padding-bottom: 20px;
 }
-
 
 /* HTML Elements */
 .gist {
@@ -35,6 +34,34 @@ p{
   font-size: 16px;
   line-height: 1.5;
 }
+.black-bar{
+  position: fixed;
+  right: 0;
+  width: 5px;
+  background: @black;
+  display: block;
+  height: 100%;
+}
+.design-flag{
+  position: fixed;
+  top: 300px;
+  right: 5px;
+  height: 140px;
+  width: 30px;
+  padding: 10px;
+  font-family: @font-family-sans-serif;
+  text-align: center;
+  background: @black;
+  display: block;
+  color: @white;
+  &:hover{
+    color: @black;
+  }
+  span{
+    display: block;
+  }
+}
+
 /* Header */
 .dlogo{
   margin-top: 40px;
@@ -42,14 +69,25 @@ p{
 .container{
   border-left: 1px solid @black;
   border-right: 1px solid @black;
+  -webkit-box-shadow:
+    10px 0 0 0  @white,
+    11px 0 0 0 @black;
+  -moz-box-shadow:
+    10px 0 0 0  @white,
+    11px 0 0 0 @black;
+  box-shadow:
+    10px 0 0 0  @white,
+    11px 0 0 0 @black;
 }
 .navbar{
   font-family: @font-family-sans-serif;
 }
 .navbar-deasy{
   .navbar-default;
+  background: transparent;
   border: none;
   .container{
+    background: @white;
     border-top: 1px solid @black;
   }
 }
@@ -242,9 +280,13 @@ p{
     }
   }
 }
+h4{
+  font-weight: 900;
+  text-transform: uppercase;
+}
 .intro, .hello{
   padding-top: 160px;
-  h4{
+  h3{
     font-weight: 900;
     text-transform: uppercase;
   }
@@ -490,9 +532,6 @@ p{
   margin: -10px 0 20px;
 }
 
-body > footer {
-  margin-bottom: 50px;
-}
 
 /* Utilities */
 
