@@ -1,41 +1,109 @@
-/*
+
 $(function() {
     //caches a jQuery object containing the header element
     var header = $(".fixed-space");
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
 
-        if (scroll >= 140) {
-            $(".fixed-space").animate({ y: -80 });
-            $(".dd-head").animate({ x: -300, scale: .7 });
-        } else {
-            header.addClass('fixed-space');
-        }
+        console.log(scroll);
     });
 });
-*/
-/*!
- * headroom.js v0.3.11 - Give your page some headroom. Hide your header until you need it
- * Copyright (c) 2013 Nick Williams - http://wicky.nillia.ms/headroom.js
- * License: MIT
 
 
-!function(a){"use strict";function b(a){this.callback=a,this.ticking=!1}function c(a,d){d=d||c.options,this.lastKnownScrollY=0,this.elem=a,this.debouncer=new b(this.update.bind(this)),this.tolerance=d.tolerance,this.classes=d.classes,this.offset=d.offset,this.initialised=!1}window.requestAnimationFrame=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame,b.prototype={constructor:b,update:function(){this.callback&&this.callback(),this.ticking=!1},requestTick:function(){this.ticking||(requestAnimationFrame(this.update.bind(this)),this.ticking=!0)},handleEvent:function(){this.requestTick()}},c.prototype={constructor:c,init:function(){this.elem.classList.add(this.classes.initial),setTimeout(this.attachEvent.bind(this),100)},destroy:function(){this.initialised=!1,window.removeEventListener("scroll",this.debouncer,!1),this.elem.classList.remove(this.classes.unpinned,this.classes.pinned,this.classes.initial)},attachEvent:function(){this.initialised||(this.initialised=!0,window.addEventListener("scroll",this.debouncer,!1))},unpin:function(){this.elem.classList.add(this.classes.unpinned),this.elem.classList.remove(this.classes.pinned)},pin:function(){this.elem.classList.remove(this.classes.unpinned),this.elem.classList.add(this.classes.pinned)},getScrollY:function(){return void 0!==window.pageYOffset?window.pageYOffset:(document.documentElement||document.body.parentNode||document.body).scrollTop},update:function(){var a=this.getScrollY(),b=Math.abs(a-this.lastKnownScrollY)>=this.tolerance;0>a||(b&&(a>this.lastKnownScrollY&&a>=this.offset?this.unpin():a<this.lastKnownScrollY&&this.pin()),this.lastKnownScrollY=a)}},c.options={tolerance:0,offset:0,classes:{pinned:"headroom--pinned",unpinned:"headroom--unpinned",initial:"headroom"}},a.Headroom=c}(this);
-
-*/
 
 $(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
+  $('a[href*=#introduction]').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
           scrollTop: target.offset().top
-        }, 2000);
+        }, 1000);
         return false;
       }
     }
+  });
+
+  $('a[href*=#questions]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 160
+        }, 1000);
+        return false;
+      }
+    }
+  });
+
+  $('a[href*=#aboutdavid]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 160
+        }, 1000);
+        return false;
+      }
+    }
+  });
+
+  $('a[href*=#testimonials]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 160
+        }, 1000);
+        return false;
+      }
+    }
+  });
+
+  $('a[href*=#contact]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 160
+        }, 3000);
+        return false;
+      }
+    }
+  });
+
+});
+
+$(function bootstrapHeadSpace() {
+  'use strict';
+  var target = '.deasy-header';
+  var css = '.down{top: -84px;} .up{top: 0;} .transition{ -webkit-transition: top 0.9s ease; -moz-transition: top 0.9s ease; -o-transition: top 0.9s ease; transition: top 0.9s ease;}',
+      head = document.head || document.getElementsByTagName('head')[0],
+      style = document.createElement('style');
+  style.type = 'text/css';
+  if (style.styleSheet){
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+  head.appendChild(style);
+
+  $(target).addClass('transition');
+  var position = $(window).scrollTop();
+
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if(scroll <= position || scroll < 200) {
+      $(target).addClass('up').removeClass('down');
+    } else {
+      $(target).addClass('down').removeClass('up');
+    }
+    position = scroll;
   });
 });
 
